@@ -1,0 +1,108 @@
+#include <stdio.h>
+
+int main()
+{
+    int total_Balance;
+    printf("\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+    printf("\t\t +\t\t\t\t\t     +\n");
+    printf("\t\t +      WELCOME TO RAYMART'S ATM MACHINE     +\n");
+    printf("\t\t +\t\t\t\t\t     +\n");
+    printf("\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+
+    int pincode;
+    int password;
+    int i, j, k, tries = 0;
+
+    for(i = 0; i  < 1; i++)
+    {
+        printf("\n\nEnter Pincode: ");
+        scanf("%d", &pincode);
+
+        if(pincode == 1234)
+        {
+            printf("\n\n\t\t    ########## WELCOME RAYMART ##########\n\n");
+
+            for(j = 0; j < 3; j++)
+            {
+                printf("\nEnter Password: ");
+                scanf("%d", &password);
+
+                int balance = 500000;   //My balance is Php 500,000
+                total_Balance = balance;
+
+                if(password == 3321)
+                {
+                    for(k = 1; k < 10; k++)
+                    {
+                        int withdraw, deposit;
+                        int choice;
+                        printf;
+
+                        if(k == 1)
+                        {
+                            printf("\n\n\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+                            printf("\t\t +\t\t\t\t\t     +\n");
+                            printf("\t\t +           WELCOME TO ATM MACHINE          +\n");
+                            printf("\t\t +\t\t\t\t\t     +\n");
+                            printf("\t\t +++++++++++++++++++++++++++++++++++++++++++++\n");
+                        }
+                        printf("\n\n\t\t   >>>>>>>>>>>>> MAIN SCREEN <<<<<<<<<<<<<\n");
+                        printf("\n\n\t\tChoose a Transaction\n");
+                        printf("\t\t[1] Inquire Balance\n");
+                        printf("\t\t[2] Deposit\n");
+                        printf("\t\t[3] Withdraw\n");
+                        printf("\t\t[4] Quit\n");
+                        printf;
+                        printf("\t\t\nEnter you choice: ");
+                        scanf("%d", &choice);
+
+                        switch(choice)
+                        {
+                            case 1:
+                                printf("\n\n\t||Balance Inquiry||\n");
+                                printf("\nYour current balance is Php %d\n", total_Balance);
+                                continue;
+                            case 2:
+                                printf("\n\n\t||Deposit||\n");
+                                printf("\nEnter amount to deposit: ");
+                                scanf("%d", &deposit);
+                                total_Balance = total_Balance + deposit;
+                                printf("\nYou deposit Php %d", deposit);
+                                printf("\nYour current balance is Php %d", total_Balance);
+                                continue;
+                            case 3:
+                                printf("\n\n\t||Withdraw||\n");
+                                printf("\nEnter amount to withdraw: ");
+                                scanf("%d", &withdraw);
+                                total_Balance = total_Balance - withdraw;
+                                printf("\nYour withdrawal amount is Php %d", withdraw);
+                                printf("\nYour remaining balance is Php %d", total_Balance);
+                                continue;
+                            case 4:
+                                printf("EXIT");
+                                system("cls");
+                                break;
+                            default:
+                                printf("\n\nInvalid Option! Please try again!");
+                                continue;
+                        } // Switch
+                        break;
+                    } // For k
+                    break;
+                } // Password
+                else if (j == 2)
+                {
+                    printf("\n\tYou entered too much! ATM card blocked!\n");
+                }
+                else
+                {
+                    printf("\n\tYou entered wrong PASSWORD! Please try again.\n");
+                }
+            } // For j
+        } // Pincode
+        else
+        {
+            printf("\n\tYou entered the wrong PINCODE!\n");
+        }
+    } // For i
+} // int main
